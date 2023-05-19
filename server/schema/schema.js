@@ -137,6 +137,7 @@ const mutation = new GraphQLObjectType({
         return Project.findByIdAndDelete(args.id);
       },
     },
+    //Include update crud
   },
 });
 
