@@ -1,0 +1,74 @@
+# Example of graphql queries used to test out the api
+
+# Get all projects
+{
+  projects{
+    id
+    name
+    description
+    status
+  }
+}
+
+# Get all clients
+{
+  clients{
+    id
+    name
+    email
+    phone
+  }
+}
+
+# Add project
+mutation{
+	addProject(name:"Implement Computer Vision" description:"Add computer vision libraries to the existing code", status:new, clientId:"64670b3b13151289c6ec8d6b"){
+    id
+    name
+    description
+    status
+    client{
+      id
+      name
+      email
+    }
+  }
+}
+
+# Add client
+mutation{
+	addClient(name: "Bruce Wayne", email:"bruce@wayne_enterprises.com", phone:"555-555-5555"){
+    id
+    name
+    email
+    phone
+  }
+}
+
+# Delete project or client
+mutation{
+	deleteProject(id:"project id"){
+    id
+    name
+    description
+    status
+  }
+}
+
+mutation{
+	deleteClient(id:"client id"){
+    id
+    name
+    email
+    phone
+  }
+}
+
+# Update project
+mutation{
+	updateProject(id:"646af7fea162a9ae64dc3292", description:"Optimize the server with scalable backends", status:progress){
+    id
+    name
+  }
+}
+

@@ -154,6 +154,7 @@ const mutation = new GraphQLObjectType({
             },
           }),
         },
+    },
         resolve(parent, args) {
           return Project.findByIdAndUpdate(
             args.id,
@@ -169,7 +170,6 @@ const mutation = new GraphQLObjectType({
         },
       },
     },
-  },
 });
 
 module.exports = new GraphQLSchema({
