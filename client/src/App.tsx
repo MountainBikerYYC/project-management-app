@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./components/Header";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Clients from "./components/Clients";
-
 const uri: string = "http://localhost:5000/graphql";
 
 const client = new ApolloClient({
