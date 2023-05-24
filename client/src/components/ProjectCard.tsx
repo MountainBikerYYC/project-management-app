@@ -1,8 +1,22 @@
-import React from 'react'
+import { ProjectInterface } from "../interfaces/ProjectInterface"
 
-const ProjectCard = (project: any) => {
+interface ProjectInterfaceProps {
+    project: ProjectInterface
+}
+
+const ProjectCard = ({project}: ProjectInterfaceProps) => {
   return (
-    <div>ProjectCard</div>
+    <div className="col-md-4">
+        <div className="card mb-3">
+            <div className="card-body">
+                <div className ="d-flex justify-content-between align-items-center">
+                    <h5 className="card-title">{project.name}</h5>
+                    <a className="btn btn-light" href={`/projects/${project}`}>View</a>
+                </div>
+                <p className="small">Status: <strong>{project.status}</strong></p>
+            </div>
+        </div>
+    </div>
   )
 }
 
