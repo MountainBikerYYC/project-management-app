@@ -16,10 +16,10 @@ const AddClientModal = () => {
 
   const [addClient] = useMutation(ADD_CLIENT, {
     variables: { name, email, phone },
-    update(cache, {data: {addClient}}) {
-      const clients = cache.readQuery<{ clients: ClientInterface[] }>({
+    update(cache, { data: { addClient } }) {
+      const { clients } = cache.readQuery<{ clients: ClientInterface[] }>({
         query: GET_CLIENTS,
-      });
+      }) || { clients: [] };
 
       cache.writeQuery({
         query: GET_CLIENTS,
@@ -35,7 +35,10 @@ const AddClientModal = () => {
       return alert("Please fill in all fields");
     }
 
-    addClient();
+    addClient({ variables: { name, email, phone } });
+    setName("");
+    setEmail("");
+    setPhone("");
   };
   return (
     <>

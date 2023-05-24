@@ -11,25 +11,6 @@ interface ClientRowProps {
 const ClientRow = ({ client }: ClientRowProps) => {
   const [deleteClient] = useMutation(DELETE_CLIENT);
 
-  //   const handleDelete = () => {
-  //     deleteClient({
-  //       variables: { id: client.id },
-  //       //refetch queries is not best method
-  //     //   refetchQueries: [{ query: GET_CLIENTS }],
-  //         update(cache, {data: {deleteClient}}){
-  //           const {existingClients} = cache.readQuery<{ clients: ClientInterface[] }>({
-  //               query: GET_CLIENTS });
-
-  //               const updatedClients = existingClients?.clients.filter((c) => c.id !== client.id);
-
-  //               cache.writeQuery({
-  //                   query: GET_CLIENTS,
-  //                   data: {clients: updatedClients.filter(updatedClients =>client.id !=== deleteClient.id)},
-  //               });
-  //           }
-  //     });
-  //   };
-
   const handleDelete = async () => {
     const { data } = await deleteClient({
       variables: { id: client.id },
