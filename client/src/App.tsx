@@ -39,6 +39,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
+              {/* finish the url part */}
               <Route path="/projects/:id" element={<Project />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
