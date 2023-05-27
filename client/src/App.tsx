@@ -39,7 +39,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* finish the url part */}
+              {/* finish the url part slug */}
               <Route path="/projects/:id" element={<Project />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
